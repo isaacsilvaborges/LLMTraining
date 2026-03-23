@@ -2,6 +2,13 @@ In here I'm training some LLM skills
 
 1. Textualização dos Dados: Transformar cada linha do seu CSV (X_train e y_train) em um formato de instrução em texto (como um arquivo JSONL), onde as características da safra viram a pergunta e o Yield vira a resposta.
 
+English terms: Instruction Formatting
+Instruction Tuning Data Preparation
+Prompt-Completion Formatting
+Supervised Fine-Tuning (SFT) Data Formatting
+Text Serialization of Structured Data
+Tabular-to-Text Transformation
+
 2. Escolha do Modelo Base: Selecionar um modelo open-weights leve e acessível para rodar em GPUs gratuitas ou locais, como o Llama 3 (8B), Mistral (7B) ou Gemma (2B/7B).
 
 3. Preparação do Ambiente: Instalar as bibliotecas fundamentais da Hugging Face para treinamento: transformers, datasets, peft, trl e bitsandbytes.
