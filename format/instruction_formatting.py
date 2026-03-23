@@ -2,7 +2,7 @@ import pandas as pd
 import json
 import random
 
-def create_llm_dataset(X, y, file_name="farmer_dataset.jsonl"):
+def create_llm_dataset(X, y, file_name):
 
     system_prompt = "You are now an expert computational agronomist. Predict the crop yield in tons per hectare based on the farmer's description. Respond ONLY with the numerical value."
 
@@ -12,11 +12,13 @@ def create_llm_dataset(X, y, file_name="farmer_dataset.jsonl"):
         "Morning! I'm trying to map out my harvest. I've got a {crop} crop going in {soil} dirt out {region}. We're looking at {days} days to harvest. {irrigation_text} and {fertilizer_text}. The weather's been {weather}, temperatures are hovering around {temp} °C, and we've seen about {rain} mm of rain. Can you give me a yield estimate in tons per hectare?",
         "Could use an expert opinion. I'm {days} days out from harvesting my {crop} in the {region} region. The ground is {soil}. We've had a lot of {weather} days, {rain} mm of rainfall, and average temps of {temp} °C. {irrigation_text}, and {fertilizer_text}. How many tons per hectare do you think this field will pull?"
     ]
-
+    counter = 0
     with open(file_name, 'w', encoding='utf-8') as file:
 
         for idx, row in X.iterrows():
             # Converting the values so the LLM can use it in the texts above
+            print(f"Doing for the {counter}º one")
+            counter += 1
             crop = row['Crop']
             region = row['Region']
             soil = row['Soil_Type']
