@@ -50,4 +50,4 @@ def create_llm_dataset(X, y, file_name):
             }
 
             file.write(json.dumps(json_record) + '\n')
-            print(f"Dataset gerado com sucesso: '{file_name}' com {len(X)} exemplos!")
+        print(f"Dataset gerado com sucesso: '{file_name}' com {len(X)} exemplos!")
